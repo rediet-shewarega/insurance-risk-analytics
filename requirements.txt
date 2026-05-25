@@ -1,0 +1,30 @@
+# Core
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+
+# Visualisation
+matplotlib>=3.8
+seaborn>=0.13
+plotly>=5.18
+
+# Notebooks
+jupyter>=1.0
+ipykernel>=6.27
+
+# Modeling
+scikit-learn>=1.4
+xgboost>=2.0
+
+# Interpretability
+shap>=0.44
+lime>=0.2
+
+# Data versioning
+dvc>=3.30
+
+# Dev / quality
+pytest>=7.4
+pytest-cov>=4.1
+ruff>=0.4
+black>=24.3

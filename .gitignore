@@ -1,0 +1,73 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Virtual envs ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# --- Testing / linting ---
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+coverage.xml
+*.cover
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+
+# --- Data (tracked by DVC, not Git) ---
+data/*
+!data/.gitkeep
+!data/*.dvc
+
+# --- Models / artifacts ---
+models/
+*.pkl
+*.joblib
+*.h5
+mlruns/
+
+# --- DVC ---
+/.dvc/tmp
+/.dvc/cache
