@@ -1,0 +1,16 @@
+stages:
+  generate_synthetic:
+    cmd: python -m src.synthetic_data --out data/insurance_data_synth.csv
+    deps:
+      - src/synthetic_data.py
+    outs:
+      - data/insurance_data_synth.csv
+
+  clean:
+    cmd: python -m src.pipeline clean data/insurance_data_synth.csv data/insurance_data_synth_cleaned.csv
+    deps:
+      - data/insurance_data_synth.csv
+      - src/data_loader.py
+      - src/pipeline.py
+    outs:
+      - data/insurance_data_synth_cleaned.csv
