@@ -27,7 +27,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 try:
     from xgboost import XGBClassifier, XGBRegressor
     HAS_XGB = True
-except ImportError:  # pragma: no cover
+except Exception:  # pragma: no cover  # catches ImportError *and* XGBoostError (missing libomp)
     HAS_XGB = False
 
 
