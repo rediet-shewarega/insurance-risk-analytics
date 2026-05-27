@@ -1,0 +1,196 @@
+{
+  "rows": 20000,
+  "cols": 55,
+  "portfolio_loss_ratio": 1.076,
+  "claim_frequency": 0.158,
+  "mean_severity": 13632.04,
+  "median_premium": 1814.23,
+  "province_loss_ratio": {
+    "Western Cape": {
+      "premium": 1550318.06,
+      "claims": 2269834.0383,
+      "n": 770,
+      "claim_n": 154,
+      "loss_ratio": 1.4641,
+      "claim_freq": 0.2
+    },
+    "North West": {
+      "premium": 3026650.03,
+      "claims": 3873741.3068,
+      "n": 1509,
+      "claim_n": 285,
+      "loss_ratio": 1.2799,
+      "claim_freq": 0.1889
+    },
+    "KwaZulu-Natal": {
+      "premium": 8787359.72,
+      "claims": 10818125.633,
+      "n": 4387,
+      "claim_n": 802,
+      "loss_ratio": 1.2311,
+      "claim_freq": 0.1828
+    },
+    "Limpopo": {
+      "premium": 4774053.56,
+      "claims": 5821882.8544,
+      "n": 2363,
+      "claim_n": 420,
+      "loss_ratio": 1.2195,
+      "claim_freq": 0.1777
+    },
+    "Free State": {
+      "premium": 582135.22,
+      "claims": 695052.7696,
+      "n": 278,
+      "claim_n": 55,
+      "loss_ratio": 1.194,
+      "claim_freq": 0.1978
+    },
+    "Mpumalanga": {
+      "premium": 1114458.87,
+      "claims": 1114164.0793,
+      "n": 574,
+      "claim_n": 72,
+      "loss_ratio": 0.9997,
+      "claim_freq": 0.1254
+    },
+    "Gauteng": {
+      "premium": 5580292.95,
+      "claims": 5483598.1458,
+      "n": 2779,
+      "claim_n": 433,
+      "loss_ratio": 0.9827,
+      "claim_freq": 0.1558
+    },
+    "Northern Cape": {
+      "premium": 3970863.46,
+      "claims": 3569325.8065,
+      "n": 2018,
+      "claim_n": 250,
+      "loss_ratio": 0.8989,
+      "claim_freq": 0.1239
+    },
+    "Eastern Cape": {
+      "premium": 10662565.45,
+      "claims": 9445152.4212,
+      "n": 5322,
+      "claim_n": 690,
+      "loss_ratio": 0.8858,
+      "claim_freq": 0.1297
+    }
+  },
+  "gender_loss_ratio": {
+    "Female": {
+      "premium": 16802711.97,
+      "claims": 18564883.8574,
+      "n": 8477,
+      "claim_n": 1365,
+      "loss_ratio": 1.1049,
+      "claim_freq": 0.161
+    },
+    "Male": {
+      "premium": 23245985.35,
+      "claims": 24525993.1976,
+      "n": 11523,
+      "claim_n": 1796,
+      "loss_ratio": 1.0551,
+      "claim_freq": 0.1559
+    }
+  },
+  "vehicletype_loss_ratio": {
+    "Motorcycle": {
+      "premium": 757537.95,
+      "claims": 966476.81,
+      "n": 403,
+      "claim_n": 67,
+      "loss_ratio": 1.2758,
+      "claim_freq": 0.1663
+    },
+    "Passenger Vehicle": {
+      "premium": 31380148.39,
+      "claims": 33828310.9927,
+      "n": 15625,
+      "claim_n": 2475,
+      "loss_ratio": 1.078,
+      "claim_freq": 0.1584
+    },
+    "Light Commercial": {
+      "premium": 5912722.11,
+      "claims": 6244158.314,
+      "n": 2966,
+      "claim_n": 468,
+      "loss_ratio": 1.0561,
+      "claim_freq": 0.1578
+    },
+    "Heavy Commercial": {
+      "premium": 1998288.87,
+      "claims": 2051930.9382,
+      "n": 1006,
+      "claim_n": 151,
+      "loss_ratio": 1.0268,
+      "claim_freq": 0.1501
+    }
+  },
+  "hypothesis_results": [
+    {
+      "hypothesis": "H1: No risk diff across provinces (severity)",
+      "test": "ANOVA (TotalClaims)",
+      "group_a": "ALL",
+      "group_b": "9 groups",
+      "statistic": 1.6493,
+      "p_value": 0.105829,
+      "effect_size": NaN,
+      "decision": "Fail to reject H0"
+    },
+    {
+      "hypothesis": "H1: Eastern Cape vs KwaZulu-Natal (frequency)",
+      "test": "chi-squared",
+      "group_a": "Eastern Cape",
+      "group_b": "KwaZulu-Natal",
+      "statistic": 51.8489,
+      "p_value": 0.0,
+      "effect_size": 0.0731,
+      "decision": "Reject H0"
+    },
+    {
+      "hypothesis": "H2: zip 1021 vs 1006 (frequency)",
+      "test": "chi-squared",
+      "group_a": "1021",
+      "group_b": "1006",
+      "statistic": 0.0166,
+      "p_value": 0.89744,
+      "effect_size": 0.0043,
+      "decision": "Fail to reject H0"
+    },
+    {
+      "hypothesis": "H3: zip 1021 vs 1006 (margin)",
+      "test": "Welch t-test (Margin)",
+      "group_a": "1021",
+      "group_b": "1006",
+      "statistic": -0.591,
+      "p_value": 0.554646,
+      "effect_size": -0.0396,
+      "decision": "Fail to reject H0"
+    },
+    {
+      "hypothesis": "H4: Men vs Women (frequency)",
+      "test": "z-test (proportions)",
+      "group_a": "Male",
+      "group_b": "Female",
+      "statistic": -0.9889,
+      "p_value": 0.322719,
+      "effect_size": -0.0052,
+      "decision": "Fail to reject H0"
+    },
+    {
+      "hypothesis": "H4: Men vs Women (severity)",
+      "test": "Welch t-test (TotalClaims)",
+      "group_a": "Male",
+      "group_b": "Female",
+      "statistic": 0.1733,
+      "p_value": 0.862422,
+      "effect_size": 0.0062,
+      "decision": "Fail to reject H0"
+    }
+  ]
+}
