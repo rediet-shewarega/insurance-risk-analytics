@@ -119,3 +119,32 @@ black --check src tests
 # Run tests
 pytest -q
 ```
+
+## Task 2 — Data Version Control (DVC)
+
+DVC tracks the datasets outside Git, giving ACIS a full audit trail for every
+analysis run.
+
+### Tracked versions
+
+| File | Version | Description |
+|---|---|---|
+| `data/insurance_data_synth.csv.dvc` | raw | Synthetic ACIS schema (20k rows) |
+| `data/insurance_data_synth_cleaned.csv.dvc` | cleaned | Winsorised at p99.5, invalid rows dropped |
+
+### Reproduce the pipeline
+
+```bash
+pip install -r requirements.txt
+dvc pull                    # fetch both CSV versions from the local remote
+dvc repro                   # re-run generate_synthetic + clean stages if stale
+```
+
+### Add the real ACIS dataset
+
+```bash
+dvc add data/insurance_data.csv
+git add data/insurance_data.csv.dvc .gitignore
+git commit -m "data: track real ACIS extract (Feb 2014 – Aug 2015)"
+dvc push
+```
